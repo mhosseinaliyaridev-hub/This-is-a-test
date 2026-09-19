@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beauty Studio - Professional beauty services including hair, skin, nails, makeup, spa and massage treatments. Book your appointment today.">
+    <meta name="keywords" content="beauty salon, hair salon, spa, massage, manicure, pedicure, facial, makeup">
+    <title>Beauty Studio | Professional Beauty Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-spinner"></div>
+        <p>Loading Beauty Studio...</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">Beauty Studio</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#specialists" class="nav-link">Specialists</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#admin" class="nav-link admin-link">Admin</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Main Content -->
+    <main id="mainContent">
+        <!-- Home Section -->
+        <section id="home" class="section home-section active">
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title fade-in">
+                        <span class="highlight">Beauty</span> Redefined
+                    </h1>
+                    <p class="hero-subtitle fade-in-delay">Experience luxury beauty services tailored just for you</p>
+                    <div class="hero-buttons fade-in-delay-2">
+                        <a href="#booking" class="btn btn-primary">Book Now</a>
+                        <a href="#services" class="btn btn-secondary">View Services</a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="5000">0</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="50">0</span>
+                            <span class="stat-label">Expert Stylists</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="15">0</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="100">0</span>
+                            <span class="stat-label">% Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scroll-indicator">
+                    <span>Scroll Down</span>
+                    <div class="scroll-arrow"></div>
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <div class="section about-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Welcome to <span class="highlight">Beauty Studio</span></h2>
+                        <p class="section-subtitle">Where elegance meets expertise</p>
+                    </div>
+                    
+                    <div class="about-content">
+                        <div class="about-image">
+                            <img src="https://picsum.photos/seed/salon/600/400" alt="Beauty Studio Interior" loading="lazy">
+                        </div>
+                        <div class="about-text">
+                            <h3>Your Beauty, Our Passion</h3>
+                            <p>At Beauty Studio, we believe that everyone deserves to look and feel their best. Our team of experienced professionals is dedicated to providing you with personalized beauty services that exceed your expectations.</p>
+                            <p>From cutting-edge hair styling to relaxing spa treatments, we offer a comprehensive range of services designed to enhance your natural beauty and help you unwind from the stresses of daily life.</p>
+                            <ul class="about-features">
+                                <li>✓ Certified Professional Staff</li>
+                                <li>✓ Premium Quality Products</li>
+                                <li>✓ Personalized Treatment Plans</li>
+                                <li>✓ Relaxing & Hygienic Environment</li>
+                            </ul>
+                            <a href="#booking" class="btn btn-primary">Start Your Journey</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popular Services -->
+            <div class="section services-preview">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Our <span class="highlight">Popular Services</span></h2>
+                        <p class="section-subtitle">Discover what makes us special</p>
+                    </div>
+                    
+                    <div class="services-grid" id="popularServicesGrid">
+                        <!-- Dynamically loaded -->
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="#services" class="btn btn-secondary">View All Services</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Steps -->
+            <div class="section booking-steps-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">How to <span class="highlight">Book</span></h2>
+                        <p class="section-subtitle">Simple steps to your perfect appointment</p>
+                    </div>
+                    
+                    <div class="steps-container">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-icon">📋</div>
+                            <h3>Choose Service</h3>
+                            <p>Select from our wide range of professional beauty services</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <div class="step-icon">👤</div>
+                            <h3>Pick Specialist</h3>
+                            <p>Choose your preferred beauty expert or let us recommend one</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-icon">📅</div>
+                            <h3>Select Time</h3>
+                            <p>Find a date and time that works best for your schedule</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">4</div>
+                            <div class="step-icon">✅</div>
+                            <h3>Confirm Booking</h3>
+                            <p>Review and confirm your appointment instantly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Preview -->
+            <div class="section reviews-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">What Our <span class="highlight">Clients Say</span></h2>
+                        <p class="section-subtitle">Real reviews from real customers</p>
+                    </div>
+                    
+                    <div class="reviews-slider" id="reviewsSlider">
+                        <!-- Dynamically loaded -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <div class="container">
+                    <h2>Ready to Transform Your Look?</h2>
+                    <p>Book your appointment today and experience the Beauty Studio difference</p>
+                    <a href="#booking" class="btn btn-primary btn-large">Book Your Appointment</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our <span class="highlight">Services</span></h2>
+                    <p class="section-subtitle">Professional beauty treatments for every need</p>
+                </div>
+
+                <div class="services-controls">
+                    <div class="search-box">
+                        <input type="text" id="serviceSearch" placeholder="Search services..." class="search-input">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <select id="serviceCategoryFilter" class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="Hair">Hair</option>
+                            <option value="Skin">Skin</option>
+                            <option value="Nails">Nails</option>
+                            <option value="Makeup">Makeup</option>
+                            <option value="Spa">Spa</option>
+                            <option value="Massage">Massage</option>
+                        </select>
+                        
+                        <select id="serviceSort" class="filter-select">
+                            <option value="name">Sort by Name</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="duration">Duration</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="services-list" id="servicesList">
+                    <!-- Dynamically loaded -->
+                </div>
+
+                <div class="empty-state hidden" id="servicesEmpty">
+                    <div class="empty-icon">🔍</div>
+                    <h3>No services found</h3>
+                    <p>Try adjusting your search or filters</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Detail Modal -->
+        <div class="modal" id="serviceModal">
+            <div class="modal-content service-modal-content">
+                <button class="modal-close" onclick="closeServiceModal()">&times;</button>
+                <div id="serviceModalContent">
+                    <!-- Dynamically loaded -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Specialists Section -->
+        <section id="specialists" class="section specialists-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Meet Our <span class="highlight">Specialists</span></h2>
+                    <p class="section-subtitle">Talented professionals dedicated to your beauty</p>
+                </div>
+
+                <div class="search-box specialists-search">
+                    <input type="text" id="specialistSearch" placeholder="Search specialists..." class="search-input">
+                    <button class="search-btn">🔍</button>
+                </div>
+
+                <div class="specialists-grid" id="specialistsGrid">
+                    <!-- Dynamically loaded -->
+                </div>
+
+                <div class="empty-state hidden" id="specialistsEmpty">
+                    <div class="empty-icon">👤</div>
+                    <h3>No specialists found</h3>
+                    <p>Try adjusting your search</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section gallery-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our <span class="highlight">Gallery</span></h2>
+                    <p class="section-subtitle">Showcase of our finest work</p>
+                </div>
+
+                <div class="gallery-filters">
+                    <button class="gallery-filter-btn active" data-category="">All</button>
+                    <button class="gallery-filter-btn" data-category="Hair">Hair</button>
+                    <button class="gallery-filter-btn" data-category="Nails">Nails</button>
+                    <button class="gallery-filter-btn" data-category="Makeup">Makeup</button>
+                    <button class="gallery-filter-btn" data-category="Interior">Interior</button>
+                    <button class="gallery-filter-btn" data-category="Before/After">Before/After</button>
+                </div>
+
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Dynamically loaded -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-prev" onclick="previousImage()">&#10094;</button>
+            <button class="lightbox-next" onclick="nextImage()">&#10095;</button>
+            <img src="" alt="Gallery Image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+
+        <!-- Reviews Section (Full) -->
+        <section id="reviews" class="section reviews-full-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Customer <span class="highlight">Reviews</span></h2>
+                    <p class="section-subtitle">Share your experience with us</p>
+                </div>
+
+                <div class="reviews-stats">
+                    <div class="average-rating">
+                        <span class="rating-number" id="averageRating">0</span>
+                        <div class="stars" id="averageStars"></div>
+                        <span class="total-reviews" id="totalReviews">0 reviews</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="openReviewModal()">Write a Review</button>
+
+                <div class="reviews-grid" id="reviewsGrid">
+                    <!-- Dynamically loaded -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Review Modal -->
+        <div class="modal" id="reviewModal">
+            <div class="modal-content review-modal-content">
+                <button class="modal-close" onclick="closeReviewModal()">&times;</button>
+                <h3>Write a Review</h3>
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label for="reviewName">Your Name *</label>
+                        <input type="text" id="reviewName" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewRating">Rating *</label>
+                        <div class="star-rating" id="starRating">
+                            <span data-rating="1">★</span>
+                            <span data-rating="2">★</span>
+                            <span data-rating="3">★</span>
+                            <span data-rating="4">★</span>
+                            <span data-rating="5">★</span>
+                        </div>
+                        <input type="hidden" id="reviewRatingValue" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewComment">Your Review *</label>
+                        <textarea id="reviewComment" rows="4" required class="form-input"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Booking Section -->
+        <section id="booking" class="section booking-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Book an <span class="highlight">Appointment</span></h2>
+                    <p class="section-subtitle">Schedule your visit in a few simple steps</p>
+                </div>
+
+                <div class="booking-container">
+                    <!-- Step Indicator -->
+                    <div class="booking-steps">
+                        <div class="booking-step active" data-step="1">
+                            <span class="step-dot">1</span>
+                            <span class="step-label">Service</span>
+                        </div>
+                        <div class="booking-step" data-step="2">
+                            <span class="step-dot">2</span>
+                            <span class="step-label">Specialist</span>
+                        </div>
+                        <div class="booking-step" data-step="3">
+                            <span class="step-dot">3</span>
+                            <span class="step-label">Date & Time</span>
+                        </div>
+                        <div class="booking-step" data-step="4">
+                            <span class="step-dot">4</span>
+                            <span class="step-label">Your Info</span>
+                        </div>
+                        <div class="booking-step" data-step="5">
+                            <span class="step-dot">5</span>
+                            <span class="step-label">Confirm</span>
+                        </div>
+                    </div>
+
+                    <!-- Booking Form -->
+                    <form id="bookingForm" class="booking-form">
+                        <!-- Step 1: Select Service -->
+                        <div class="booking-step-content active" data-step="1">
+                            <h3>Select a Service</h3>
+                            <div class="service-selection-grid" id="bookingServicesGrid">
+                                <!-- Dynamically loaded -->
+                            </div>
+                            <input type="hidden" id="selectedServiceId" required>
+                        </div>
+
+                        <!-- Step 2: Select Specialist -->
+                        <div class="booking-step-content" data-step="2">
+                            <h3>Choose a Specialist</h3>
+                            <div class="specialist-selection-grid" id="bookingSpecialistsGrid">
+                                <!-- Dynamically loaded -->
+                            </div>
+                            <input type="hidden" id="selectedSpecialistId" required>
+                        </div>
+
+                        <!-- Step 3: Select Date & Time -->
+                        <div class="booking-step-content" data-step="3">
+                            <h3>Select Date & Time</h3>
+                            <div class="datetime-selection">
+                                <div class="form-group">
+                                    <label for="appointmentDate">Date *</label>
+                                    <input type="date" id="appointmentDate" required class="form-input">
+                                </div>
+                                <div class="time-slots" id="timeSlots">
+                                    <!-- Dynamically loaded -->
+                                </div>
+                                <input type="hidden" id="selectedTime" required>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Customer Info -->
+                        <div class="booking-step-content" data-step="4">
+                            <h3>Your Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="customerFirstName">First Name *</label>
+                                    <input type="text" id="customerFirstName" required class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="customerLastName">Last Name *</label>
+                                    <input type="text" id="customerLastName" required class="form-input">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="customerEmail">Email *</label>
+                                    <input type="email" id="customerEmail" required class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="customerPhone">Phone Number *</label>
+                                    <input type="tel" id="customerPhone" required class="form-input" pattern="[0-9+\-\s()]+">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerNotes">Additional Notes (Optional)</label>
+                                <textarea id="customerNotes" rows="3" class="form-input"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Confirmation -->
+                        <div class="booking-step-content" data-step="5">
+                            <h3>Review Your Booking</h3>
+                            <div class="booking-summary" id="bookingSummary">
+                                <!-- Dynamically loaded -->
+                            </div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div class="booking-navigation">
+                            <button type="button" class="btn btn-secondary" id="prevStepBtn" onclick="prevBookingStep()" disabled>Previous</button>
+                            <button type="button" class="btn btn-primary" id="nextStepBtn" onclick="nextBookingStep()">Next</button>
+                            <button type="submit" class="btn btn-success hidden" id="submitBookingBtn">Confirm Booking</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Confirmation -->
+        <section id="bookingConfirmation" class="section confirmation-section hidden">
+            <div class="container">
+                <div class="confirmation-card">
+                    <div class="confirmation-icon">✓</div>
+                    <h2>Booking Confirmed!</h2>
+                    <p>Your appointment has been successfully scheduled.</p>
+                    
+                    <div class="reservation-code">
+                        <span>Reservation Code:</span>
+                        <strong id="confirmationCode">ABC12345</strong>
+                    </div>
+                    
+                    <div class="booking-details" id="confirmationDetails">
+                        <!-- Dynamically loaded -->
+                    </div>
+                    
+                    <div class="confirmation-actions">
+                        <a href="#home" class="btn btn-primary">Back to Home</a>
+                        <button class="btn btn-secondary" onclick="window.print()">Print Confirmation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (Full) -->
+        <section id="about" class="section about-full-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About <span class="highlight">Beauty Studio</span></h2>
+                    <p class="section-subtitle">Our story and mission</p>
+                </div>
+
+                <div class="about-full-content">
+                    <div class="about-story">
+                        <h3>Our Story</h3>
+                        <p>Founded in 2010, Beauty Studio has been at the forefront of the beauty industry, providing exceptional services to thousands of satisfied clients. What started as a small salon has grown into a full-service beauty destination.</p>
+                        <p>Our mission is simple: to help every client look and feel their absolute best. We achieve this through continuous training, using only premium products, and maintaining the highest standards of hygiene and customer service.</p>
+                    </div>
+
+                    <div class="about-values">
+                        <h3>Our Values</h3>
+                        <div class="values-grid">
+                            <div class="value-card">
+                                <div class="value-icon">💎</div>
+                                <h4>Quality</h4>
+                                <p>We never compromise on the quality of our services and products.</p>
+                            </div>
+                            <div class="value-card">
+                                <div class="value-icon">❤️</div>
+                                <h4>Care</h4>
+                                <p>Every client receives personalized attention and care.</p>
+                            </div>
+                            <div class="value-card">
+                                <div class="value-icon">🌿</div>
+                                <h4>Sustainability</h4>
+                                <p>We use eco-friendly products and practices whenever possible.</p>
+                            </div>
+                            <div class="value-card">
+                                <div class="value-icon">🎓</div>
+                                <h4>Excellence</h4>
+                                <p>Our team continuously trains to stay updated with latest trends.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get in <span class="highlight">Touch</span></h2>
+                    <p class="section-subtitle">We'd love to hear from you</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <div class="info-icon">📍</div>
+                            <div class="info-text">
+                                <h4>Address</h4>
+                                <p>123 Beauty Lane, Suite 100<br>Beverly Hills, CA 90210</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📞</div>
+                            <div class="info-text">
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">✉️</div>
+                            <div class="info-text">
+                                <h4>Email</h4>
+                                <p>info@beautystudio.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">🕐</div>
+                            <div class="info-text">
+                                <h4>Working Hours</h4>
+                                <p>Mon - Sat: 9:00 AM - 8:00 PM<br>Sunday: 10:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Name *</label>
+                            <input type="text" id="contactName" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email *</label>
+                            <input type="email" id="contactEmail" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" rows="5" required class="form-input"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Section -->
+        <section id="admin" class="section admin-section">
+            <div class="container">
+                <div class="admin-header">
+                    <h2>Admin Dashboard</h2>
+                    <nav class="admin-nav">
+                        <button class="admin-nav-btn active" data-tab="dashboard">Dashboard</button>
+                        <button class="admin-nav-btn" data-tab="customers">Customers</button>
+                        <button class="admin-nav-btn" data-tab="appointments">Appointments</button>
+                        <button class="admin-nav-btn" data-tab="services">Services</button>
+                        <button class="admin-nav-btn" data-tab="specialists">Specialists</button>
+                    </nav>
+                </div>
+
+                <!-- Dashboard Tab -->
+                <div class="admin-tab active" id="dashboardTab">
+                    <div class="dashboard-stats">
+                        <div class="dash-stat-card">
+                            <div class="dash-stat-icon">👥</div>
+                            <div class="dash-stat-info">
+                                <span class="dash-stat-value" id="dashTotalCustomers">0</span>
+                                <span class="dash-stat-label">Total Customers</span>
+                            </div>
+                        </div>
+                        <div class="dash-stat-card">
+                            <div class="dash-stat-icon">📅</div>
+                            <div class="dash-stat-info">
+                                <span class="dash-stat-value" id="dashTotalAppointments">0</span>
+                                <span class="dash-stat-label">Total Appointments</span>
+                            </div>
+                        </div>
+                        <div class="dash-stat-card">
+                            <div class="dash-stat-icon">📆</div>
+                            <div class="dash-stat-info">
+                                <span class="dash-stat-value" id="dashTodayAppointments">0</span>
+                                <span class="dash-stat-label">Today's Appointments</span>
+                            </div>
+                        </div>
+                        <div class="dash-stat-card">
+                            <div class="dash-stat-icon">✅</div>
+                            <div class="dash-stat-info">
+                                <span class="dash-stat-value" id="dashCompletedAppointments">0</span>
+                                <span class="dash-stat-label">Completed</span>
+                            </div>
+                        </div>
+                        <div class="dash-stat-card">
+                            <div class="dash-stat-icon">❌</div>
+                            <div class="dash-stat-info">
+                                <span class="dash-stat-value" id="dashCancelledAppointments">0</span>
+                                <span class="dash-stat-label">Cancelled</span>
+                            </div>
+                        </div>
+                        <div class="dash-stat-card">
+                            <div class="dash-stat-icon">💰</div>
+                            <div class="dash-stat-info">
+                                <span class="dash-stat-value" id="dashRevenue">$0</span>
+                                <span class="dash-stat-label">Total Revenue</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-charts">
+                        <div class="chart-card">
+                            <h3>Popular Services</h3>
+                            <div class="chart-container" id="popularServicesChart">
+                                <!-- Dynamically loaded -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customers Tab -->
+                <div class="admin-tab" id="customersTab">
+                    <div class="admin-table-header">
+                        <h3>Customers</h3>
+                        <div class="table-actions">
+                            <input type="text" id="customerSearch" placeholder="Search customers..." class="search-input">
+                            <button class="btn btn-primary" onclick="openCustomerModal()">Add Customer</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Appointments</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customersTableBody">
+                                <!-- Dynamically loaded -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Appointments Tab -->
+                <div class="admin-tab" id="appointmentsTab">
+                    <div class="admin-table-header">
+                        <h3>Appointments</h3>
+                        <div class="table-actions">
+                            <input type="text" id="appointmentSearch" placeholder="Search appointments..." class="search-input">
+                            <select id="appointmentStatusFilter" class="filter-select">
+                                <option value="">All Statuses</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Confirmed">Confirmed</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Customer</th>
+                                    <th>Service</th>
+                                    <th>Specialist</th>
+                                    <th>Date/Time</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointmentsTableBody">
+                                <!-- Dynamically loaded -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Services Tab -->
+                <div class="admin-tab" id="servicesTab">
+                    <div class="admin-table-header">
+                        <h3>Services</h3>
+                        <div class="table-actions">
+                            <input type="text" id="adminServiceSearch" placeholder="Search services..." class="search-input">
+                            <button class="btn btn-primary" onclick="openServiceModal()">Add Service</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Duration</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="servicesTableBody">
+                                <!-- Dynamically loaded -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Specialists Tab -->
+                <div class="admin-tab" id="specialistsTab">
+                    <div class="admin-table-header">
+                        <h3>Specialists</h3>
+                        <div class="table-actions">
+                            <input type="text" id="specialistAdminSearch" placeholder="Search specialists..." class="search-input">
+                            <button class="btn btn-primary" onclick="openSpecialistModal()">Add Specialist</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Title</th>
+                                    <th>Experience</th>
+                                    <th>Rating</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="specialistsTableBody">
+                                <!-- Dynamically loaded -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 404 Section -->
+        <section id="error404" class="section error-section hidden">
+            <div class="container">
+                <div class="error-content">
+                    <h1>404</h1>
+                    <h2>Page Not Found</h2>
+                    <p>The page you're looking for doesn't exist or has been moved.</p>
+                    <a href="#home" class="btn btn-primary">Go Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Beauty Studio</h3>
+                    <p>Your destination for professional beauty services. We're committed to helping you look and feel your best.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="YouTube">📹</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#specialists">Specialists</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#booking">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Hair Care</a></li>
+                        <li><a href="#services">Skin Treatment</a></li>
+                        <li><a href="#services">Nail Care</a></li>
+                        <li><a href="#services">Makeup</a></li>
+                        <li><a href="#services">Spa & Massage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>📍 123 Beauty Lane, Beverly Hills</li>
+                        <li>📞 +1 (555) 123-4567</li>
+                        <li>✉️ info@beautystudio.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Beauty Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
